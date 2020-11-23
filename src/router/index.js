@@ -25,6 +25,12 @@ const routes = [
     name: "Area",
     component: () =>
       import(/* webpackChunkName: "recipe" */ "../views/AreaExplore.vue"),
+  },
+  {
+    path: "/favourites",
+    name: "Favourites",
+    component: () =>
+      import(/* webpackChunkName: "recipe" */ "../views/Favourites.vue"),
   }
 ];
 

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "material-design-icons": "^3.0.1",
+    "mdue": "^0.1.2",
     "uikit": "^3.5.9",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

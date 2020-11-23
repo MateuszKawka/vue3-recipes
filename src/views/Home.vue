@@ -1,13 +1,18 @@
 <template>
-  <div class="home uk-container uk-container-expand">
+  <div class="home uk-container">
+    <router-link
+      to="/favourites"
+      class="uk-button uk-button-text uk-margin-small-top uk-text-danger uk-flex uk-flex-right"
+      >Favourites</router-link
+    >
     <Search />
 
-    <div class="uk-flex uk-flex-between">
+    <div class="uk-flex uk-flex-between uk-margin-medium-top">
       <Categories />
       <Areas />
     </div>
 
-    <div class="uk-margin-large-top">
+    <div class="uk-margin-large-top uk-flex uk-flex-center">
       <RecipePreview :recipe="recipeData" />
     </div>
   </div>
@@ -18,7 +23,6 @@ import Search from "../components/Search";
 import RecipePreview from "../components/RecipePreview";
 import Categories from "../components/Categories";
 import Areas from "../components/Areas";
-
 import { ref, onMounted } from "vue";
 import { RANDOM_RECIPE_PATH } from "../common/consts";
 
@@ -28,7 +32,7 @@ export default {
     Search,
     RecipePreview,
     Categories,
-    Areas,
+    Areas
   },
   setup() {
     const recipeData = ref({});
