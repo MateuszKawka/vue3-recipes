@@ -26,6 +26,7 @@ export default {
 <style scoped>
 
 .recipe-preview-container {
+  width: 100%;
    max-width: 400px;
 }
 .recipe-preview {

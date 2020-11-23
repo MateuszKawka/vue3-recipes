@@ -4,7 +4,7 @@
       <div class="uk-card-media-top">
         <img :src="recipe.strMealThumb" alt="" class="recipe-image" />
         <a
-          class="uk-position-top-right uk-icon-button uk-margin-small-right uk-margin-small-top"
+          class="uk-position-top-right uk-icon-button uk-margin-small-right uk-margin-small-top uk-background-muted"
           :class="{ 'uk-text-warning': isFavourite }"
           @click="favouriteHandler"
           ><Heart
