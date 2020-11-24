@@ -23,12 +23,12 @@
             >{{ recipe.strCategory }}</router-link
           >
         </div>
-        <h3 class="uk-card-title uk-text-center uk-margin-small-top">
+        <h3 class="uk-card-title uk-text-center uk-margin-medium-top">
           {{ recipe.strMeal }}
         </h3>
       </div>
     </div>
-    <div class="uk-container">
+    <div class="uk-container uk-margin-small-top">
       <RecipeIngredients :measures="measures" :ingredients="ingredients" />
       <p class="uk-text-center uk-margin-medium-bottom">
         {{ recipe.strInstructions }}
