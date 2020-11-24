@@ -1,3 +1,5 @@
+import { jsPDF } from "jspdf";
+
 export const saveRecipesToLocalStorage = (recipeID) => {
   const recipes = getRecipesFromLocalStorate();
 
@@ -18,9 +20,19 @@ export const removeRecipeFromLocalStorage = (recipeID) => {
   localStorage.setItem("saved_recipes", JSON.stringify(newRecipes));
 };
 
+export const isRecipeFavourite = (recipeID) => {
+  const recipes = getRecipesFromLocalStorate();
 
-export const isRecipeFavourite = recipeID => {
-    const recipes = getRecipesFromLocalStorate();
+  return recipes.includes(recipeID);
+};
 
-    return recipes.includes(recipeID)
-}
+export const exportToPdf = (title, ingredients, measures) => {
+  const doc = new jsPDF();
+  doc.setFontSize(22);
+  doc.text(`${title}`, 20, 20);
+  doc.setFontSize(16);
+  ingredients.forEach((item, index) => {
+    doc.text(`${item} --- ${measures[index]}`, 20, 30 + index * 10);
+  });
+  doc.save(`${title}.pdf`);
+};

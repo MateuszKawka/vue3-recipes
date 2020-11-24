@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="uk-container uk-margin-small-top">
-      <RecipeIngredients :measures="measures" :ingredients="ingredients" />
+      <RecipeIngredients :measures="measures" :ingredients="ingredients" :recipeName="recipe.strMeal"/>
       <p class="uk-text-center uk-margin-medium-bottom">
         {{ recipe.strInstructions }}
       </p>

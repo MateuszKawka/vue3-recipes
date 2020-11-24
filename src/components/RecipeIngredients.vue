@@ -1,5 +1,8 @@
 <template>
   <div>
+    <p class="uk-text-right">
+      <a class="uk-icon-button uk-margin-small-left" @click="exportToPdf(recipeName, ingredients, measures)"><Printer /></a>
+    </p>
     <table class="uk-table">
       <thead>
         <tr>
@@ -26,13 +29,14 @@
 
 <script>
 import { INGREDIENT_THUMB_PATH } from "../common/consts";
+import {exportToPdf} from "../common/helpers"
 import { ref } from "vue";
-import { EyeOff } from "mdue";
+import { Printer } from "mdue";
 
 export default {
   name: "RecipeIngredients",
   components: {
-    EyeOff
+    Printer,
   },
   props: {
     ingredients: {
@@ -43,10 +47,15 @@ export default {
       type: Array,
       required: true,
     },
+    recipeName: {
+      type: String,
+      required: true
+    }
   },
   setup() {
     return {
       INGREDIENT_THUMB_PATH,
+      exportToPdf
     };
   },
 };
