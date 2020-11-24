@@ -11,10 +11,21 @@
         /></a>
       </div>
       <div class="uk-card-body">
+        <div class="uk-flex uk-flex-between">
+          <router-link
+            :to="`/area/${recipe.strArea}`"
+            class="uk-badge uk-background-default uk-text-danger"
+            >{{ recipe.strArea }}</router-link
+          >
+          <router-link
+            :to="`/category/${recipe.strCategory}`"
+            class="uk-badge uk-background-default uk-text-danger"
+            >{{ recipe.strCategory }}</router-link
+          >
+        </div>
         <h3 class="uk-card-title uk-text-center uk-margin-small-top">
           {{ recipe.strMeal }}
         </h3>
-
       </div>
     </div>
     <div class="uk-container">

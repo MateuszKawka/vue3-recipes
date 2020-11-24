@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <Spinner v-if="loading"/>
     <Recipe :recipe="recipeData" v-else/>
   </div>

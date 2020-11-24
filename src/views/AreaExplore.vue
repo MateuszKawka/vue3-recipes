@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p class="uk-text-center uk-margin-small-top">{{ area }}</p>
+  <div class="">
+    <p class="uk-text-center">{{ area }}</p>
     <RecipesList :recipes="recipesData" />
   </div>
 </template>
