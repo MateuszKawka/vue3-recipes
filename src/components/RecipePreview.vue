@@ -1,14 +1,14 @@
 <template>
-    <div class="recipe-preview-container">
-      <router-link :to="`/recipe/${recipe.idMeal}`">
+  <div class="recipe-preview-container">
+    <router-link :to="`/recipe/${recipe.idMeal}`">
       <div class="recipe-preview">
         <img class="recipe-preview__image" :src="recipe.strMealThumb" />
         <div class="recipe-preview__content">
           <h2 class="recipe-preview__name">{{ recipe.strMeal }}</h2>
         </div>
       </div>
-        </router-link>
-    </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -24,10 +24,9 @@ export default {
 </script>
 
 <style scoped>
-
 .recipe-preview-container {
   width: 100%;
-   max-width: 640px;
+  max-width: 640px;
 }
 .recipe-preview {
   width: 100%;
@@ -65,7 +64,7 @@ export default {
   box-sizing: border-box;
 }
 
-@media all and (min-width: 720px) {
+@media all and (min-width: 960px) {
   .recipe-preview {
     transform: scale(0.95);
     transition: 0.25s transform ease-in-out;
@@ -73,6 +72,12 @@ export default {
 
   .recipe-preview:hover {
     transform: scale(1);
+  }
+}
+
+@media all and (min-width: 960px) and (max-width: 1200px) {
+  .recipe-preview {
+    height: 240px;
   }
 }
 </style>

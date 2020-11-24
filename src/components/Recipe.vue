@@ -11,7 +11,7 @@
         /></a>
       </div>
       <div class="uk-card-body uk-card-small">
-        <div class="uk-flex uk-flex-between uk-margin-small-bottom">
+        <div class="uk-flex uk-flex-between uk-margin-small-bottom uk-width-1-2@m uk-align-center">
           <router-link
             :to="`/area/${recipe.strArea}`"
             class="uk-badge uk-background-default uk-text-danger"
