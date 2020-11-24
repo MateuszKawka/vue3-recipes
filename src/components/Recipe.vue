@@ -5,13 +5,13 @@
         <img :src="recipe.strMealThumb" alt="" class="recipe-image" />
         <a
           class="uk-position-top-right uk-icon-button uk-margin-small-right uk-margin-small-top uk-background-muted"
-          :class="{ 'uk-text-warning': isFavourite }"
+          :class="{ 'uk-text-danger': isFavourite }"
           @click="favouriteHandler"
           ><Heart
         /></a>
       </div>
-      <div class="uk-card-body">
-        <div class="uk-flex uk-flex-between">
+      <div class="uk-card-body uk-card-small">
+        <div class="uk-flex uk-flex-between uk-margin-small-bottom">
           <router-link
             :to="`/area/${recipe.strArea}`"
             class="uk-badge uk-background-default uk-text-danger"
@@ -23,7 +23,7 @@
             >{{ recipe.strCategory }}</router-link
           >
         </div>
-        <h3 class="uk-card-title uk-text-center uk-margin-medium-top">
+        <h3 class="uk-card-title uk-text-center uk-margin-small-top">
           {{ recipe.strMeal }}
         </h3>
       </div>
