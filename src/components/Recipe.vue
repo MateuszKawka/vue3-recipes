@@ -14,38 +14,11 @@
         <h3 class="uk-card-title uk-text-center uk-margin-small-top">
           {{ recipe.strMeal }}
         </h3>
+
       </div>
     </div>
     <div class="uk-container">
-      <button
-        type="button"
-        class="uk-button uk-button-text uk-button-small uk-text-center"
-        @click="showIngredientsBind"
-      >
-        {{ showIngredients ? "hide ingredients" : "show ingrediends" }}
-      </button>
-      <table class="uk-table" v-if="showIngredients">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Measures</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(ingredient, index) in ingredients" :key="ingredient">
-            <td>
-              <img
-                class="ingredient-thumb"
-                :src="`${INGREDIENT_THUMB_PATH}${ingredient}-small.png`"
-              />
-            </td>
-            <td>{{ ingredient }}</td>
-            <td>{{ measures[index] }}</td>
-          </tr>
-        </tbody>
-      </table>
-
+      <RecipeIngredients :measures="measures" :ingredients="ingredients" />
       <p class="uk-text-center uk-margin-medium-bottom">
         {{ recipe.strInstructions }}
       </p>
@@ -62,6 +35,7 @@ import {
   isRecipeFavourite,
 } from "../common/helpers";
 import { Heart } from "mdue";
+import RecipeIngredients from "./RecipeIngredients";
 export default {
   name: "Recipe",
   props: {
@@ -72,14 +46,10 @@ export default {
   },
   components: {
     Heart,
+    RecipeIngredients,
   },
   setup(props) {
-    const showIngredients = ref(true);
     const isFavourite = ref(false);
-
-    const showIngredientsBind = () => {
-      showIngredients.value = !showIngredients.value;
-    };
 
     const ingredients = computed(() => {
       return Object.keys(props.recipe)
@@ -110,9 +80,6 @@ export default {
     return {
       ingredients,
       measures,
-      showIngredients,
-      INGREDIENT_THUMB_PATH,
-      showIngredientsBind,
       saveRecipesToLocalStorage,
       isFavourite,
       favouriteHandler,
@@ -124,10 +91,6 @@ export default {
 <style scoped>
 .uk-card {
   box-shadow: none;
-}
-
-.ingredient-thumb {
-  width: 48px;
 }
 
 .recipe-image {

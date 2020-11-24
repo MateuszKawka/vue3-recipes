@@ -1,11 +1,11 @@
 <template>
-  <div class="uk-margin-medium-top">
-    <div class="uk-inline">
+  <div class="uk-margin-medium-top uk-width-1-1">
+    <div class="uk-inline uk-flex uk-flex-center uk-width-1-1">
       <span class="uk-form-icon loading-icon"
         ><div uk-spinner v-if="isLoading"></div
       ></span>
       <input
-        class="uk-input uk-form-width-large"
+        class="uk-input uk-width-1-1"
         type="text"
         v-model="searchQuery"
         @keyup="SEARCH_RECIPES"

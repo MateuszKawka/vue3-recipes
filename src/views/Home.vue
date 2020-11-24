@@ -6,10 +6,9 @@
       >Favourites</router-link
     >
     <Search />
-
     <div class="uk-flex uk-flex-between uk-margin-medium-top">
       <Categories />
-      <Areas />
+    <Areas />
     </div>
 
     <div class="uk-margin-large-top uk-flex uk-flex-center">
@@ -32,7 +31,7 @@ export default {
     Search,
     RecipePreview,
     Categories,
-    Areas
+    Areas,
   },
   setup() {
     const recipeData = ref({});

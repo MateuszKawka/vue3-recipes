@@ -27,7 +27,7 @@ export default {
 
 .recipe-preview-container {
   width: 100%;
-   max-width: 400px;
+   max-width: 640px;
 }
 .recipe-preview {
   width: 100%;
