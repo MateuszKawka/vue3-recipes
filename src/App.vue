@@ -1,10 +1,22 @@
 <template>
   <div class="app-container" uk-height-viewport>
+    <BackButton />
     <div class="app uk-height-1-1 uk-width-3-5@m uk-background-default uk-box-shadow-medium" uk-height-viewport>
       <router-view />
     </div>
   </div>
 </template>
+
+<script>
+import BackButton from "./components/BackButton"
+
+export default {
+  name: "App",
+  components: {
+    BackButton
+  }
+}
+</script>
 
 <style scoped>
 .app-container {
