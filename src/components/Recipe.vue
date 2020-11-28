@@ -11,7 +11,9 @@
         /></a>
       </div>
       <div class="uk-card-body uk-card-small">
-        <div class="uk-flex uk-flex-between uk-margin-small-bottom uk-width-1-2@m uk-align-center">
+        <div
+          class="uk-flex uk-flex-between uk-margin-small-bottom uk-width-1-2@m uk-align-center"
+        >
           <router-link
             :to="`/area/${recipe.strArea}`"
             class="uk-badge uk-background-default uk-text-danger"
@@ -29,7 +31,11 @@
       </div>
     </div>
     <div class="uk-container uk-margin-small-top">
-      <RecipeIngredients :measures="measures" :ingredients="ingredients" :recipeName="recipe.strMeal"/>
+      <RecipeIngredients
+        :measures="measures"
+        :ingredients="ingredients"
+        :recipeName="recipe.strMeal"
+      />
       <p class="uk-text-center uk-margin-medium-bottom">
         {{ recipe.strInstructions }}
       </p>
@@ -46,6 +52,7 @@ import {
   isRecipeFavourite,
 } from "../common/helpers";
 import { Heart } from "mdue";
+import { useToast } from "vue-toastification";
 import RecipeIngredients from "./RecipeIngredients";
 export default {
   name: "Recipe",
@@ -61,6 +68,7 @@ export default {
   },
   setup(props) {
     const isFavourite = ref(false);
+    const toast = useToast();
 
     const ingredients = computed(() => {
       return Object.keys(props.recipe)
@@ -78,8 +86,10 @@ export default {
     const favouriteHandler = () => {
       if (isFavourite.value) {
         removeRecipeFromLocalStorage(props.recipe.idMeal);
+        toast.error("Recipe remove from favourites");
       } else {
         saveRecipesToLocalStorage(props.recipe.idMeal);
+        toast.error("Recipe add to favourites");
       }
       isFavourite.value = isRecipeFavourite(props.recipe.idMeal);
     };
