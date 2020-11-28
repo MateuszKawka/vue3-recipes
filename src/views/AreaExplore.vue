@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="uk-text-center uk-text-large uk-padding-large uk-text-danger">{{ area }}</p>
+    <p class="uk-text-center uk-text-large uk-padding-large uk-text-success">{{ area }}</p>
     <RecipesList :recipes="recipesData" />
   </div>
 </template>

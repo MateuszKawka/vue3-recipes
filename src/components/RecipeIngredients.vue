@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="uk-text-right">
-      <a class="uk-icon-button uk-margin-small-left uk-text-danger" @click="exportToPdf(recipeName, ingredients, measures)"><Printer /></a>
+      <a class="uk-icon-button uk-margin-small-left uk-text-success" @click="exportToPdf(recipeName, ingredients, measures)"><Printer /></a>
     </p>
     <table class="uk-table">
       <thead>
@@ -19,8 +19,8 @@
               :src="`${INGREDIENT_THUMB_PATH}${ingredient}-small.png`"
             />
           </td>
-          <td class="uk-text-danger">{{ ingredient }}</td>
-          <td class="uk-text-danger">{{ measures[index] }}</td>
+          <td class="uk-text-success">{{ ingredient }}</td>
+          <td class="uk-text-success">{{ measures[index] }}</td>
         </tr>
       </tbody>
     </table>

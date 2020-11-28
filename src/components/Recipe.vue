@@ -4,8 +4,8 @@
       <div class="uk-card-media-top">
         <img :src="recipe.strMealThumb" alt="" class="recipe-image" />
         <a
-          class="uk-position-top-right uk-icon-button uk-margin-small-right uk-margin-small-top uk-background-muted"
-          :class="{ 'uk-text-danger': isFavourite }"
+          class=" uk-position-fixed uk-position-top-right uk-icon-button uk-margin-small-right uk-margin-small-top uk-background-muted"
+          :class="{ 'uk-text-success': isFavourite }"
           @click="favouriteHandler"
           ><Heart
         /></a>
@@ -16,12 +16,12 @@
         >
           <router-link
             :to="`/area/${recipe.strArea}`"
-            class="uk-badge uk-background-default uk-text-danger"
+            class="uk-badge uk-background-default uk-text-success"
             >{{ recipe.strArea }}</router-link
           >
           <router-link
             :to="`/category/${recipe.strCategory}`"
-            class="uk-badge uk-background-default uk-text-danger"
+            class="uk-badge uk-background-default uk-text-success"
             >{{ recipe.strCategory }}</router-link
           >
         </div>
@@ -86,10 +86,10 @@ export default {
     const favouriteHandler = () => {
       if (isFavourite.value) {
         removeRecipeFromLocalStorage(props.recipe.idMeal);
-        toast.error("Recipe remove from favourites");
+        toast.success("Recipe remove from favourites");
       } else {
         saveRecipesToLocalStorage(props.recipe.idMeal);
-        toast.error("Recipe add to favourites");
+        toast.success("Recipe add to favourites");
       }
       isFavourite.value = isRecipeFavourite(props.recipe.idMeal);
     };

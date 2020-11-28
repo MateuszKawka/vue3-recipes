@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p class="uk-text-center uk-text-large uk-padding-large uk-text-danger" v-if="recipesData.length">Favourites</p>
+    <p class="uk-text-center uk-text-large uk-padding-large uk-text-success" v-if="recipesData.length">Favourites</p>
     <RecipesList :recipes="recipesData" v-if="recipesData.length" />
-    <div v-else class="uk-text-center uk-margin-top uk-text-danger">
+    <div v-else class="uk-text-center uk-margin-top uk-text-success">
       No favorite recipes
     </div>
   </div>

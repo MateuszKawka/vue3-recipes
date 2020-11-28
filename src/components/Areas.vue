@@ -1,6 +1,6 @@
 <template>
   <div class="uk-inline">
-    <button class="uk-button uk-button-text uk-text-danger" type="button">
+    <button class="uk-button uk-button-text uk-text-success" type="button">
       Areas
     </button>
     <div uk-dropdown>

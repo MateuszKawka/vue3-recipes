@@ -2,7 +2,7 @@
   <div class="home uk-container">
     <router-link
       to="/favourites"
-      class="uk-button uk-button-text uk-margin-small-top uk-text-danger uk-flex uk-flex-right"
+      class="uk-button uk-button-text uk-margin-small-top uk-text-success uk-flex uk-flex-right"
       >Favourites</router-link
     >
     <Search />
